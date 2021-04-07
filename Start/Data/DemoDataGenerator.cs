@@ -58,7 +58,27 @@ namespace UserManagement.Data
             #endregion
 
             #region Add some groups
-            // Add code to generate demo groups here
+            Group malibu, passou, jägermeister;
+
+            dc.Groups.Add(malibu = new Group
+            {
+                Name = "Malinu"
+            });
+
+            dc.Groups.Add(passou = new Group
+            {
+                Name = "Passou"
+            });
+
+            dc.Groups.Add(jägermeister = new Group
+            {
+                Name = "Jägermeister"
+            });
+            #endregion
+
+            #region add groups to users
+            john.Groups = new() { malibu, passou };
+            jane.Groups = new() { jägermeister };
             #endregion
 
             await dc.SaveChangesAsync();

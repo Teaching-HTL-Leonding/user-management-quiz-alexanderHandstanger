@@ -42,6 +42,9 @@ namespace UserManagement
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
+
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
         }
     }
 }
